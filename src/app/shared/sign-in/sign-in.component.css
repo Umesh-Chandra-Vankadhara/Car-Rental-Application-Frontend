@@ -1,0 +1,27 @@
+
+.navbar{
+    float:right;
+}
+a{
+    color:white;
+}
+#signincard{
+    margin: auto;
+    margin-top: 15%;
+    width:40%;
+}
+#email{
+    margin-left: 20%;
+    width:60%;
+}
+label{
+    padding-left: 5%;
+}
+#password{
+    margin-left:19%;
+    width:60%;
+}
+.btn{
+    float: right; 
+}
+/* forgotpassword{} */

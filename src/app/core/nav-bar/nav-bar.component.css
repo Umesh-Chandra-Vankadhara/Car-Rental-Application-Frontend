@@ -1,0 +1,19 @@
+nav,button{
+    background-color: #1565c0;
+}
+fa-icon,span{
+    color:white;
+}
+span{
+    padding-left: 5px;
+}
+button{
+    color:white;
+}
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    
+
+}
