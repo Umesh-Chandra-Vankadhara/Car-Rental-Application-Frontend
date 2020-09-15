@@ -11,6 +11,9 @@ import { FooterComponent } from './core/footer/footer.component';
 import { UserComponent } from './user/user.component';
 import { BookingComponent } from './booking/booking.component';
 import { SigninModalComponent } from './shared/signin-modal/signin-modal.component';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -22,13 +25,15 @@ import { SigninModalComponent } from './shared/signin-modal/signin-modal.compone
     FooterComponent,
     UserComponent,
     BookingComponent,
-    SigninModalComponent
+    SigninModalComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule,
+    ReactiveFormsModule
     
   ],
   providers: [],
