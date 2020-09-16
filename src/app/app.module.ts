@@ -13,6 +13,10 @@ import { BookingComponent } from './booking/booking.component';
 import { SigninModalComponent } from './shared/signin-modal/signin-modal.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SignupComponent } from './shared/signup/signup.component';
+import { ResetPasswordComponent } from './shared/reset-password/reset-password.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
+
 
 
 
@@ -26,6 +30,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     UserComponent,
     BookingComponent,
     SigninModalComponent,
+    SignupComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +39,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     FontAwesomeModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ModalModule.forRoot()
     
   ],
   providers: [],

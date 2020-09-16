@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-signup-modal',
+  selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
-export class SignupModalComponent implements OnInit {
-  showModal: boolean;
+export class SignupComponent implements OnInit {
   registerForm: FormGroup;
-  submitted = false;
 
+  submitted = false;
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
@@ -21,21 +20,17 @@ export class SignupModalComponent implements OnInit {
       mobile: ['', [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/), Validators.minLength(10)]]
   });
   }
-   // convenience getter for easy access to form fields
+    // convenience getter for easy access to form fields
 get f() { return this.registerForm.controls; }
 
-  onSubmit() {
-    this.submitted = true;
-    // stop here if form is invalid
-    if (this.registerForm.invalid) {
-        return;
-    }
-    if(this.submitted)
-    {
-      this.showModal = false;
-    }
+onSubmit() {
+  this.submitted = true;
+  // stop here if form is invalid
+  if (this.registerForm.invalid) {
+      return;
   
   }
-  }
 
+}
 
+}

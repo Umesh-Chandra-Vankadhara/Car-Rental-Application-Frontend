@@ -1,13 +1,14 @@
-
-<!-- <div class="navbar">
-   <a class='nav-link' routerLink="signin">Signin</a>
+<!-- 
+<div class="navbar">
+    <a routerLink="/signinmodal"><button id ="signbtn">Signin</button></a> 
 </div>   -->
 
-    
-<!-- <div id="signincard">
+<!--     
+<div id="signincard">
 <div class="card">
     <h5 class="card-header card text-center">Sign in</h5>
     <div class="card-body">
+     <form #signinForm="ngForm"  (ngSubmit)='onSubmit(signinForm.value)'>    
      <div class="form-group row">
             <label for="email"><strong>Email ID:</strong></label>
             <input type="email" name="email" id="email" requried/>
@@ -16,9 +17,42 @@
             <label for="password"><strong>Password:</strong></label>
             <input type="password" name="password" id="password" requried/>
      </div><br/>
-      <a href="#" class="btn btn-success btn-lg">Sign in</a>
+      <button class="btn btn-success btn-lg">Sign in</button>
+      <div><a href="#" id="forgotpassword">Forgot Password</a></div>
+      <div>Don't have an account?<a id="signup">Sign up</a></div>
+   </form> 
     </div>
   </div>
-</div>
-<span><a href="#" id="forgotpassword">Forgot Password</a></span>
-<p>Don't have an account?<a id="signup">Sign up</a></p> -->
+</div> -->
+ 
+ 
+                  <div id="signincard">
+                     <div class="card">
+                         <h5 class="card-header card text-center">Sign in</h5>
+                         <div class="card-body">
+                      <form (ngSubmit)='onSubmit(signinForm.value)' #signinForm ="ngForm">
+                          <div class="form-group row">
+                                 <label for="email"><strong>Email ID:</strong></label>
+                                 <input type="email" name="email" class="form-control" id="email" requried [(ngModel)]="email" #emailVar="ngModel"/>
+                                 <div [hidden]="emailVar.valid" class="alert alert-danger">
+                                    Email is required
+                                 </div>
+                          </div>
+                          <div class="form-group row">
+                                 <label for="password"><strong>Password:</strong></label>
+                                 <input type="password" class="form-control" name="password" id="password"[(ngModel)]="password" #passwordVar="ngModel" requried/>
+                          </div>
+                           <a href="#" class="btn btn-success">Sign in</a>
+                      </form>
+                         </div>
+                       </div>
+                     </div>
+                <div class="text-center">
+                     <a id="forgotpass" href="#">Forgot Password</a>
+                </div>
+                <div>
+                   <p>Don't have an account ?<a id="signbtn" href="#">Sign up</a></p>
+                </div>
+       
+       
+       
