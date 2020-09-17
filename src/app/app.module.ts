@@ -8,14 +8,16 @@ import { SignInComponent } from './shared/sign-in/sign-in.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HomeComponent } from './home/home/home.component';
 import { FooterComponent } from './core/footer/footer.component';
-import { UserComponent } from './user/user.component';
-import { BookingComponent } from './booking/booking.component';
+
 import { SigninModalComponent } from './shared/signin-modal/signin-modal.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SignupComponent } from './shared/signup/signup.component';
 import { ResetPasswordComponent } from './shared/reset-password/reset-password.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { BookingComponent } from './booking/booking/booking.component';
+import { UserComponent } from './user/user/user.component';
+import { BookingRoutingModule } from './booking/booking/booking-routing.module';
 
 
 
@@ -40,6 +42,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     FontAwesomeModule,
     FormsModule,
     ReactiveFormsModule,
+    BookingRoutingModule,
     ModalModule.forRoot()
     
   ],
