@@ -11,7 +11,6 @@ export class SignInComponent implements OnInit {
  email:string;
  password:string;
 
-
   constructor() { }
   
   ngOnInit(): void {

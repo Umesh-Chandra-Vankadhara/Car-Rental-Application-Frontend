@@ -12,7 +12,7 @@ const routes: Routes = [
   {path:'booking-vehicle',component:BookingVehicleComponent},
   {path:'home',component:HomeComponent},
   {path:'add-vehicle',component:AddVehicleComponent},
-  {path:'admin-dashboard',component:AdminDashboardComponent}
+  {path:'admin-dashboard',component:AdminDashboardComponent},
 ];
 
 @NgModule({

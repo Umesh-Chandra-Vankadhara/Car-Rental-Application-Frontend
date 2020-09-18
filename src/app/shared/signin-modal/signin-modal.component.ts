@@ -1,8 +1,7 @@
 
 import { Component, OnInit} from '@angular/core';
-import { FormControl, NgForm } from '@angular/forms'
+import { NgForm } from '@angular/forms'
 import { faSignInAlt, faUserPlus} from '@fortawesome/free-solid-svg-icons';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -13,73 +12,77 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class SigninModalComponent implements OnInit {
    fasigninalt = faSignInAlt;
    fauserplus =faUserPlus;
+   
    showModal: boolean;
-   showModalOne: boolean;
+   showModalOne: boolean=false;
    submitted = false;
-   email:string;
-   password:string;
-   mobile:string;
-   confirmPassword:string;
-
-   registerForm: FormGroup;
    signupcard:boolean;
    signincard:boolean= true;
+  
+   
+   email:string;
+   password:string;
+   mobileNumber:string;
+   confirmPassword:string;
+   lastName:string;
+   firstName:string;
+  
  
-  constructor(private formBuilder: FormBuilder) { }
+  constructor() { }
   show()
   {
     // Show-Hide Modal Check
     this.showModal = true;
+    this.signincard=true;
   }
     //Bootstrap Modal Close event
   hide()
   {
     this.showModal = false;
   }
-  showOne()
-  {
-    // Show-Hide Modal Check
-    this.showModalOne = true;
-  }
-    //Bootstrap Modal Close event
+  // showOne()
+  // {
+  //   // Show-Hide Modal Check
+  //   this.showModalOne = true;
+  // }
+  //   //Bootstrap Modal Close event
   hideOne()
   {
     this.showModalOne = false;
+    this.showModal=false;
   }
   ngOnInit(): void {
-    this.registerForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      firstname: ['', [Validators.required, Validators.minLength(6)]],
-      mobile: ['', [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/), Validators.minLength(10)]]
-  });
   }
+
   onSubmit(credentials:NgForm){
     console.log(credentials);
   }
 
-
-
-
-
-     // convenience getter for easy access to form fields
-get f() { return this.registerForm.controls; }
-
-onRegister() {
-  this.submitted = true;
-  // stop here if form is invalid
-  if (this.registerForm.invalid) {
-      return;
+  signupUser(credentials:NgForm){
+    console.log(credentials);
+  }
+ 
+  onSigninClick(){
+    this.signupcard=false;
+    this.signincard=true;
+   }
   
-  }}
+  onSignupClick(){
+   this.signincard =false;
+   this.signupcard=true;
+   }
+   resetpassword(){
+     this.signincard=false;
+     this.signupcard=false;
+     this.showModalOne=true;
+   }
+  }
+ 
 
-onSigninClick(){
- this.signupcard=false;
- this.signincard=true;
-}
-onSignupClick(){
-this.signincard =false;
-this.signupcard=true;
-}
 
-}
+
+
+
+
+
+
